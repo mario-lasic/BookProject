@@ -1,7 +1,8 @@
 class Vertex:
-    def __init__(self, value, type) -> None:
+    def __init__(self, value, genre, sub_genre) -> None:
         self.value = value
-        self.type = type[:2].lower()
+        self.genre = genre()
+        self.sub_genre = sub_genre
         self.edges = {}
 
     def get_edges(self):
