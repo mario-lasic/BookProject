@@ -10,4 +10,6 @@ class Graph:
         from_vertex.add_edge(to_vertex)
         if not self.directed:
             to_vertex.add_edge(from_vertex)
+
+    
     
