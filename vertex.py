@@ -6,3 +6,6 @@ class Vertex:
     def get_edge(self):
         return list[self.edges.keys()]
         
+    def add_edge(self, vertex):
+        self.edges[vertex] = True
+        
