@@ -1,4 +1,5 @@
 from tree import TreeNode
+from bfs import adding_books
 import csv
 genres = []
 sub_genres = {}
@@ -34,6 +35,17 @@ for genre in genres:
         grand_child = TreeNode(sub_genre, genre, sub_genre)
         current_child.add_child(grand_child)
 
+# Adding books to the tree #
+with open('books.csv', newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        perent_node = adding_books(root ,row["SubGenre"], row["Genre"])
+        current_child = TreeNode(row["Title"], row["Genre"], row["SubGenre"], row["Author"])
+        perent_node.add_child(current_child)
+
+print(root)
+
+
 #print(genres)
 #print(sub_genres.values())
-    
+#print(root)
