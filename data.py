@@ -43,7 +43,6 @@ with open('books.csv', newline='') as csvfile:
         current_child = TreeNode(row["Title"], row["Genre"], row["SubGenre"], row["Author"])
         perent_node.add_child(current_child)
 
-print(root)
 
 
 #print(genres)
