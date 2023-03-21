@@ -1,3 +1,4 @@
+from collections import deque
 class TreeNode:
 
     def __init__(self, value = None, genre = None, sub_genre = None) -> None:
@@ -11,7 +12,25 @@ class TreeNode:
 
     def traverse(self):
         nodes_to_visit = [self]
-        while nodes_to_visit > 0:
+        while len(nodes_to_visit) > 0:
             current_node = nodes_to_visit.pop()
             print(current_node.value)
-            current_node += current_node.children
+            nodes_to_visit += current_node.children
+
+    def __str__(self):
+        stack = deque()
+        stack.append([self, 0])
+        level_str = "\n"
+        while len(stack) > 0:
+            node, level = stack.pop()
+      
+            if level > 0:
+                level_str += "| "*(level-1)+ "|-"
+            level_str += str(node.value)
+            level_str += "\n"
+            level+=1
+            for child in reversed(node.children):
+                stack.append([child, level])
+
+        return level_str
+            
