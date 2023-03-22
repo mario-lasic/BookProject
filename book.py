@@ -46,7 +46,7 @@ def name_swap(string):
 def recomedations():
     (genre, sub_genre) = choices()
     list_of_nodes = getting_books(root, genre, sub_genre)
-    book_names = ""
+    book_names = "\n"
     for node in list_of_nodes:
         if ',' in node.name and ('The' in node.name or 'A' in node.name):
             string_to_split = node.name.split()
@@ -73,7 +73,13 @@ def recomedations():
             book_names += '\n'
     print(book_names)
 
+def repeat():
+    repeat_ans = input("\n Do you want to get book recomedation for another genre ?  | Y'\'N: ")
+    if repeat_ans.lower() == 'y':
+        return True
+    else:
+        return False
 
-#startup()
-#choices()
+startup()
+
 recomedations()
