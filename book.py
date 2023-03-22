@@ -80,6 +80,3 @@ def repeat():
     else:
         return False
 
-startup()
-
-recomedations()
