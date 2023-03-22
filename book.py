@@ -37,8 +37,10 @@ def choices():
 
 def name_swap(string):
     string_split = string.split()
+    if len(string_split) == 0:
+        return ""
     surrname = string_split[0].strip().strip(',')
-    name = ""
+    name = "---"
     for i in string_split[1:]:
         name += i.strip() + ' '
     return name + surrname.strip()
