@@ -39,7 +39,7 @@ def getting_books(root_node, genre, sub_genre = None):
                 path_queue.appendleft(new_path)
 
         if current_node.genre == genre:
-            if sub_genre == None:
+            if sub_genre is None or sub_genre == '':
                 grand_children = []
                 for child in current_node.children:
                     for grand_child in child.children:
